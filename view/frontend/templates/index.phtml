@@ -1,0 +1,32 @@
+ <h2>Sign Up</h2>
+ <?php if ($block->getGeneralConfig('enable')) : ?>
+     <form class="contact custom" action="<?php echo $this->getUrl('signup/index/save', ['_secure' => true]); ?>" id="custom-form" method="post" data-hasrequired="<?php echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}'>
+         <fieldset class="fieldset">
+             <div class="field name required">
+                 <label class="label" for="name"><span><?php echo __('Name') ?></span></label>
+                 <div class="control">
+                     <input name="name" id="name" title="<?php echo __('Name') ?>" class="input-text" type="text" data-validate="{required:true}" />
+                 </div>
+             </div>
+             <div class="field date required">
+                 <label class="label" for="date"><span><?php echo __('Date') ?></span></label>
+                 <div class="control">
+                     <input name="date" id="date" title="<?php echo __('Date') ?>" class="input-text" type="date" data-validate="{required:true}" />
+                 </div>
+             </div>
+         </fieldset>
+
+         <div class="actions-toolbar">
+             <div class="primary">
+                 <input type="hidden" name="hideit" id="hideit" value="" />
+                 <button type="submit" title="<?php echo __('Sign up') ?>" class="action submit primary" id="custom_btn">
+                     <span><?php echo __('Sign up') ?></span>
+                 </button>
+             </div>
+         </div>
+     </form>
+ <?php else : ?>
+     <div class="message message-error">
+         Form not enabled
+     </div>
+ <?php endif; ?>

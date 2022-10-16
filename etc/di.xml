@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Achi\Signup\Api\Data\SignupInterface" type="Achi\Signup\Model\Data\Signup"/>
+    <virtualType name="Achi\Signup\Model\ResourceModel\Signup\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">achi_signup_signup</argument>
+            <argument name="resourceModel" xsi:type="string">Achi\Signup\Model\ResourceModel\Signup</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="achi_signup_signup_listing_data_source" xsi:type="string">Achi\Signup\Model\ResourceModel\Signup\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

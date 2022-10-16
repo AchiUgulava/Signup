@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Achi_Signup::signup" title="Sign up" module="Achi_Signup" sortOrder="99" parent="Magento_Customer::customer" action="achi_signup/signup" resource="Achi_Signup::signup_signup"/>
+    </menu>
+</config>
